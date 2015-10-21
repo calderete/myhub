@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	
+  <head>
+    <title>Charlie's Badass Website</title>
+    <link rel="stylesheets" href="main.css"
+  </head>
+  <body>
+  	<h1>IssuesChamp</h1>
+  	  <p>Here is a list of issues</p>
+  	    <ul>
+  	      <% issues.each do |issue| %>
+  	        <li>
+  	        	<% issue -- issue.id %>
+  	        	<form action="/issue/reopen/<%issue.id%>" method=post>
+  	        		<input type="submit" value="Reopen?"
+  	        	</form>
+  	        	<form action="/issue/close<%issue.id%>" method=post>
+  	        		<input type="submit" value="Close?"
+  	        	</form>
+  	        </li>
+  	        <% end %>
+
+
+
+
+</html>

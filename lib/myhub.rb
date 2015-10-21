@@ -13,7 +13,8 @@ module Myhub
     get "/" do
       api = Github.new
       # get stuff from github
-      erb :index, locals: { issues: stuff }
+      #api.list_issues
+      erb :index, locals: { issues: api.list_issues }
     end
 
     post "/issue/reopen/:id" do
